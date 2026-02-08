@@ -1,0 +1,93 @@
+﻿<Window x:Class="LugatimApp.NoteDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Not Ekle/Düzenle" 
+        Height="300" 
+        Width="450"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize"
+        Background="#F5F5F5">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Başlık -->
+        <TextBlock Grid.Row="0" 
+                   x:Name="txtWordTitle"
+                   FontSize="16" 
+                   FontWeight="Bold" 
+                   Margin="0,0,0,10"
+                   Foreground="#333333"/>
+
+        <!-- Not etiketi -->
+        <TextBlock Grid.Row="1" 
+                   Text="Notunuz:" 
+                   FontSize="13" 
+                   Margin="0,0,0,5"
+                   Foreground="#666666"/>
+
+        <!-- Not girişi -->
+        <TextBox Grid.Row="2" 
+                 x:Name="txtNote"
+                 TextWrapping="Wrap"
+                 AcceptsReturn="True"
+                 VerticalScrollBarVisibility="Auto"
+                 Padding="8"
+                 FontSize="13"
+                 BorderBrush="#CCCCCC"
+                 BorderThickness="1"
+                 Margin="0,0,0,15"/>
+
+        <!-- Butonlar -->
+        <StackPanel Grid.Row="3" 
+                    Orientation="Horizontal" 
+                    HorizontalAlignment="Right">
+            <Button Content="İptal" 
+                    Width="100" 
+                    Height="35"
+                    Margin="0,0,10,0"
+                    FontSize="13"
+                    Background="#EEEEEE"
+                    BorderThickness="1"
+                    BorderBrush="#CCCCCC"
+                    Cursor="Hand"
+                    Click="BtnCancel_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#EEEEEE"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#E0E0E0"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            
+            <Button Content="Kaydet" 
+                    Width="100" 
+                    Height="35"
+                    FontSize="13"
+                    Background="#4CAF50"
+                    Foreground="White"
+                    BorderThickness="0"
+                    Cursor="Hand"
+                    Click="BtnSave_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#4CAF50"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#45a049"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>
